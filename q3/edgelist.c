@@ -3,6 +3,7 @@
 #include "edgelist.h"
 
 void *CS61C_malloc(size_t size);
+void *CS61C_realloc(void *ptr, size_t size);
 void CS61C_free(void *ptr);
 
 // Struct definitions from header file, copied here for convenience
