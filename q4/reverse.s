@@ -49,7 +49,18 @@ main:
 #
 reverse:
     # YOUR CODE HERE
-    li a0, 0
+    addi sp, sp, -4
+    sw ra, 0(sp)
+    #
+    lw t0, 4(a0) # second = node->next
+    sw a1, 4(a0) # node->next = prev
+    beq t0, x0, end
+    mv a1, a0    # node argument
+    mv a0, t0    # "second" argument
+    jal reverse
+end:
+    lw ra, 0(sp)
+    addi sp, sp, 4
     ret
 
 # === Utility functions ===
